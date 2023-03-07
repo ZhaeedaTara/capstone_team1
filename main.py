@@ -19,7 +19,6 @@ credentials = service_account.Credentials.from_service_account_file("credentials
 @app.route('/')
 def index() -> str:
     now = datetime.now()
-    print(now)
     date_tdy=str(now.date())
     datetime_str = date_tdy+' '+'06:00:00'
     datetime_object = datetime.strptime(datetime_str, '%Y-%m-%d %H:%M:%S')
