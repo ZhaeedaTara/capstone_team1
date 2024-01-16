@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Success Page</title>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='png-google-cloud-logo.png') }}" alt="Google Cloud Logo" width="200">
+        <h1>Successfully Uploaded</h1>
+        <p>Your file has been successfully uploaded.</p>
+
+        {% if email and name %}
+            <p>Email: {{ email }}</p>
+            <p>Name: {{ name }}</p>
+        {% endif %}
+
+        <button onclick="goHome()">Home</button>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>
